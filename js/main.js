@@ -49,10 +49,10 @@ slider.find('.slider-arrow-left').click(function(){
     if(nowShowIndex <= 0){
         sliderItem.eq(nowShowIndex).fadeOut();
         nowShowIndex = sliderItem.length-1;
-        sliderItem.eq(nowShowIndex).css('display', 'flex');
+        sliderItem.eq(nowShowIndex).css('display', 'flex').hide().fadeIn();
     }else{
         sliderItem.eq(nowShowIndex).fadeOut();
-        sliderItem.eq(nowShowIndex-1).css('display', 'flex');
+        sliderItem.eq(nowShowIndex-1).css('display', 'flex').hide().fadeIn();
         nowShowIndex = nowShowIndex-1;
     }
 });
@@ -60,15 +60,13 @@ slider.find('.slider-arrow-right').click(function(){
     if(nowShowIndex >= sliderItem.length-1){
         sliderItem.eq(nowShowIndex).fadeOut();
         nowShowIndex = 0;
-        sliderItem.eq(nowShowIndex).css('display', 'flex');
+        sliderItem.eq(nowShowIndex).css('display', 'flex').hide().fadeIn();
     }else{
         sliderItem.eq(nowShowIndex).fadeOut();
-        sliderItem.eq(nowShowIndex+1).css('display', 'flex');
+        sliderItem.eq(nowShowIndex+1).css('display', 'flex').hide().fadeIn();
         nowShowIndex = nowShowIndex+1
     }
 });
-//если быстро кликать, то все картинки становятся дисплэй ноне
-
 
 $('.about-text-button').click(function(){
     $('.popup').css('display', 'block').hide().fadeIn(1000);
@@ -79,12 +77,11 @@ $(window).keydown(function(e){
     }
 });
 $('.popup').click(function(){
-    $(this).fadeOut(500); //почему не пропадает 
+    $(this).fadeOut(500);
 });
 $('.popup-content').click(function(e){
     e.stopPropagation();
 });
-
 
 $('form').submit(function(e){
     e.preventDefault();

@@ -451,7 +451,7 @@ header .content-scroll-item:before {
   z-index: 9999999;
 }
 
-.about-text .popup-content form {
+.about-text .popup-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -462,7 +462,11 @@ header .content-scroll-item:before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 100px;
+  white-space: pre-wrap;
+  width: 220px;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .about-text .popup-content form .error-message {
@@ -1140,13 +1144,12 @@ header .content-scroll-item:before {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
   }
   .about-text .popup-content {
     width: 80%;
-    height: 100%;
+    height: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1156,9 +1159,6 @@ header .content-scroll-item:before {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
   }
   .about-text .popup-content form {
     width: 100%;
