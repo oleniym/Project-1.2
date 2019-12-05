@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-  width: 1400px;
+  max-width: 1400px;
   margin: 0 auto;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -263,8 +263,7 @@ header .content-scroll-item {
   border-radius: 50px;
 }
 
-header .content-scroll-item:after {
-  content: "";
+header .content-scroll-item-left {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -272,11 +271,9 @@ header .content-scroll-item:after {
   background-color: white;
   border-radius: 50px;
   right: 40px;
-  top: -2px;
 }
 
-header .content-scroll-item:before {
-  content: "";
+header .content-scroll-item-right {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -284,7 +281,7 @@ header .content-scroll-item:before {
   background-color: white;
   border-radius: 50px;
   left: 40px;
-  top: -2px;
+  top: 0;
 }
 
 .button {
@@ -394,7 +391,7 @@ header .content-scroll-item:before {
 
 .about-pic {
   width: 50%;
-  height: 465px;
+  height: 450px;
   background: url(/img/pictures/group.jpg) center center/contain no-repeat;
 }
 
@@ -402,7 +399,7 @@ header .content-scroll-item:before {
   width: 50%;
   background-color: #ffc34b;
   color: white;
-  height: 465px;
+  height: 450px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -881,7 +878,7 @@ header .content-scroll-item:before {
 }
 
 .footer-under-social .inst {
-  background: url(/img/social/instagram.png) no-repeat;
+  background: url("/img/social/instagram.png") no-repeat;
   width: 30px;
   height: 30px;
   background-size: 30px;
@@ -890,7 +887,7 @@ header .content-scroll-item:before {
 }
 
 .footer-under-social .vk {
-  background: url(/img/social/vk.png) no-repeat;
+  background: url("/img/social/vk.png") no-repeat;
   width: 30px;
   height: 30px;
   background-size: 30px;
@@ -899,7 +896,7 @@ header .content-scroll-item:before {
 }
 
 .footer-under-social .fb {
-  background: url(/img/social/facebook.png) no-repeat;
+  background: url("/img/social/facebook.png") no-repeat;
   width: 30px;
   height: 30px;
   background-size: 30px;
@@ -986,7 +983,8 @@ header .content-scroll-item:before {
     z-index: 999999;
   }
   header .nav-text .navigation {
-    padding: 230px 0;
+    margin: 95px 0;
+    padding: 45px;
     color: white;
     font-size: 90px;
   }

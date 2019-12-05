@@ -45,7 +45,9 @@
                     <p>Подробнее о нас</p>
                 </div>
                 <div class="content-scroll">
+                    <div class="content-scroll-item-left button"></div>
                     <div class="content-scroll-item button"></div>
+                    <div class="content-scroll-item-right button"></div>
                 </div>
             </div>
         </header>

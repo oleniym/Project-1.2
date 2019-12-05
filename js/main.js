@@ -42,7 +42,7 @@ $('header .nav a').click(function(){
     $('header').removeClass('open');
 });
 
-let slider = $('.slider'); //сделать вокруг кружочков кружочек
+let slider = $('.slider');
 let sliderItem = slider.find('.slider-item');
 let nowShowIndex = 0;
 slider.find('.slider-arrow-left').click(function(){
