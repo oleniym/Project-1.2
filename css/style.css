@@ -244,44 +244,29 @@ header .content-button .button {
   cursor: pointer;
 }
 
-header .content-scroll {
+header .content-bullet {
   position: absolute;
-  height: 5px;
-  width: 5px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   bottom: 110px;
 }
 
-header .content-scroll-item {
+header .content-bullet-item {
   position: relative;
-  width: 100%;
-  height: 100%;
-  border: 2px solid white;
-  background-color: white;
+  margin: 0 15px;
+  border: 1px solid white;
   border-radius: 50px;
+  width: 9px;
+  height: 9px;
+  cursor: pointer;
 }
 
-header .content-scroll-item-left {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid white;
-  background-color: white;
-  border-radius: 50px;
-  right: 40px;
-}
-
-header .content-scroll-item-right {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px solid white;
-  background-color: white;
-  border-radius: 50px;
-  left: 40px;
-  top: 0;
+header .content-bullet-item.active {
+  background-color: #ffc34b;
 }
 
 .button {
@@ -905,17 +890,20 @@ header .content-scroll-item-right {
 }
 
 @media (max-width: 800px) {
+  .wrapper {
+    overflow: hidden;
+  }
   h2 {
-    font-size: 80px;
+    font-size: 40px;
   }
   header .slider-arrow-left {
     position: absolute;
     border: 5px solid #709dca;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 100px;
-    bottom: 95px;
-    left: 0;
+    bottom: 40px;
+    left: -90px;
   }
   header .slider-arrow-left-button {
     position: relative;
@@ -923,19 +911,19 @@ header .content-scroll-item-right {
     border-bottom: 5px solid #e4a723;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-    height: 30px;
-    width: 30px;
-    left: 35px;
-    bottom: -30px;
+    height: 25px;
+    width: 25px;
+    left: 20px;
+    bottom: -16px;
   }
   header .slider-arrow-right {
     position: absolute;
     border: 5px solid #709dca;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 100px;
-    bottom: 95px;
-    right: 0;
+    bottom: 40px;
+    right: -90px;
   }
   header .slider-arrow-right-button {
     position: relative;
@@ -943,25 +931,16 @@ header .content-scroll-item-right {
     border-top: 5px solid #e4a723;
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg);
-    height: 30px;
-    width: 30px;
-    left: 28px;
-    top: 31px;
+    height: 25px;
+    width: 25px;
+    left: 11px;
+    top: 15px;
   }
   header .nav {
     padding: 0;
   }
   header .nav-logo {
-    padding-top: 25px;
-  }
-  header .nav-logo p {
-    font-size: 60px;
-  }
-  header .nav-logo:before {
-    background-size: 100px;
-    height: 100px;
-    width: 100px;
-    margin-left: 25px;
+    display: none;
   }
   header .nav-text {
     position: fixed;
@@ -983,12 +962,12 @@ header .content-scroll-item-right {
     z-index: 999999;
   }
   header .nav-text .navigation {
-    margin: 95px 0;
-    padding: 45px;
+    margin: 10px 0;
     color: white;
-    font-size: 90px;
+    font-size: 45px;
   }
   header .nav .burger {
+    margin-top: 80px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -999,8 +978,8 @@ header .content-scroll-item-right {
         -ms-flex-pack: center;
             justify-content: center;
     position: fixed;
-    width: 100px;
-    height: 55px;
+    width: 60px;
+    height: 50px;
     right: 20px;
     cursor: pointer;
     z-index: 999999;
@@ -1033,31 +1012,29 @@ header .content-scroll-item-right {
     transition: 0.5s all;
   }
   header .content h1 {
-    font-size: 100px;
-    padding-top: 75px;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
   }
   header .content p {
-    font-size: 45px;
+    font-size: 30px;
+    text-align: center;
   }
   header .content-button {
-    width: 300px;
     font-size: 40px;
   }
   header .content .button {
-    height: 80px;
-    width: 400px;
+    height: 60px;
+    width: 80%;
+    margin-top: 35px;
   }
-  header .content-scroll {
+  header .content-bullet {
     display: none;
   }
   header.open .nav .nav-text {
     -webkit-transform: translateX(0);
             transform: translateX(0);
-  }
-  header.open .nav .nav-logo {
-    -webkit-transition: 0.5s all;
-    transition: 0.5s all;
-    opacity: 0;
+    padding: 65px 0;
   }
   header.open .nav .burger:before {
     -webkit-transform: rotate(45deg);
@@ -1074,9 +1051,14 @@ header .content-scroll-item-right {
   }
   .offer-name {
     font-size: 50px;
+    padding: 50px 0 0;
+  }
+  .offer-name p {
+    font-size: 29px;
+    margin-top: 10px;
+    padding: 0 10px;
   }
   .offer-block {
-    padding: 20px 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1086,26 +1068,25 @@ header .content-scroll-item-right {
     display: flex;
     height: 100%;
     text-align: center;
+    padding: 0 15px;
   }
   .offer-block-item {
     width: 100%;
-    padding: 15px;
+    padding: 0;
     height: 100%;
+    padding: 0;
   }
   .offer-block-item h3 {
-    font-size: 70px;
-    padding-bottom: 20px;
-    padding-left: 0;
+    margin: 0;
+    font-size: 27px;
+    padding: 55px 0 0;
   }
   .offer-block-item h3.map, .offer-block-item h3.compass, .offer-block-item h3.discussion, .offer-block-item h3.souvenir, .offer-block-item h3.picture, .offer-block-item h3.sun {
-    height: 100px;
-    background-size: 100px;
+    background: none;
   }
   .offer-block-item p {
-    font-size: 40px;
-    padding-top: 40px;
-    padding-left: 0;
-    padding-bottom: 40px;
+    padding: 0;
+    font-size: 30px;
   }
   .about {
     margin-top: 30px;
@@ -1122,14 +1103,13 @@ header .content-scroll-item-right {
     margin: 45px 0;
   }
   .about-text p {
-    font-size: 40px;
-    padding: 0 40px 60px 40px;
-    margin: 0;
+    font-size: 30px;
+    padding: 0 10px 20px 10px;
   }
   .about-text-button {
-    font-size: 50px;
+    font-size: 35px;
     width: 100%;
-    height: 110px;
+    height: 95px;
     margin: 0;
     padding: 0;
   }
@@ -1146,8 +1126,6 @@ header .content-scroll-item-right {
     padding: 0;
   }
   .about-text .popup-content {
-    width: 80%;
-    height: 60%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1164,9 +1142,8 @@ header .content-scroll-item-right {
     padding: 0;
   }
   .about-text .popup-content form input {
-    width: 100%;
-    height: 120px;
-    font-size: 40px;
+    font-size: 20px;
+    margin-bottom: 0;
   }
   .about-text .popup-content form input.error {
     border-color: #5e20c7;
@@ -1174,14 +1151,12 @@ header .content-scroll-item-right {
     font-style: italic;
   }
   .about-text .popup-content form textarea {
-    width: 100%;
-    height: 140px;
-    font-size: 40px;
+    font-size: 20px;
+    margin-bottom: 0;
   }
   .about-text .popup-content form button {
-    width: 100%;
-    height: 120px;
-    font-size: 60px;
+    font-size: 35px;
+    margin-bottom: 0;
   }
   .about-text .popup-content form button.fail {
     background-color: grey;
@@ -1191,17 +1166,17 @@ header .content-scroll-item-right {
     color: #5e20c7;
     display: none;
     font-style: italic;
-    font-size: 50px;
+    font-size: 20px;
   }
   .photo-text h2:after {
     top: 190px;
   }
   .photo-text p {
-    font-size: 40px;
+    font-size: 30px;
+    padding: 0 10px;
   }
   .photo-block-item {
-    width: calc(100%/2);
-    height: 445px;
+    width: 100%;
   }
   .reviews-block {
     width: 100%;
@@ -1216,19 +1191,28 @@ header .content-scroll-item-right {
     padding: 0;
   }
   .reviews-block-item {
-    padding: 15px;
-    font-size: 40px;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+  }
+  .reviews-block-item-first-name {
+    font-size: 25px;
+    margin-top: 0;
+    font-style: italic;
+    margin-bottom: 30px;
   }
   .reviews-block-item-first-name:before {
-    background-size: 100px;
-    width: 100px;
-    height: 100px;
+    background: none;
+  }
+  .reviews-block-item-second-name {
+    font-size: 25px;
+    margin-top: 0;
+    font-style: italic;
+    margin-bottom: 30px;
   }
   .reviews-block-item-second-name:before {
-    background-size: 100px;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 45px;
+    background: none;
   }
   .footer {
     margin: 0;
@@ -1236,8 +1220,7 @@ header .content-scroll-item-right {
     width: 100%;
   }
   .footer h4 {
-    font-size: 65px;
-    margin-top: 90px;
+    font-size: 45px;
     color: #ffc34b;
     font-weight: bold;
     text-transform: uppercase;
@@ -1257,10 +1240,13 @@ header .content-scroll-item-right {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0;
-    padding: 65px 165px;
+    padding: 0 10px;
     text-align: center;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+  }
+  .footer-block p {
+    font-size: 30px;
   }
   .footer-block-info {
     margin: 0;
@@ -1280,22 +1266,22 @@ header .content-scroll-item-right {
     width: 100%;
   }
   .footer-block-contact-info p {
-    font-size: 60px;
+    font-size: 30px;
+    padding-bottom: 10px;
   }
   .footer-block-contact-info p:before {
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
+    display: none;
   }
   .footer-block-contact a {
-    font-size: 60px;
-    line-height: normal;
-    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 50px;
+    padding-bottom: 10px;
+  }
+  .footer-block-contact a.email, .footer-block-contact a.phone {
+    padding-bottom: 10px;
   }
   .footer-block-contact a.email:before, .footer-block-contact a.phone:before {
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
+    display: none;
   }
   .footer-block-news {
     margin: 0;
@@ -1305,15 +1291,20 @@ header .content-scroll-item-right {
   .footer-block-news-block-second {
     padding-top: 40px;
   }
+  .footer-block-news-block-second p {
+    margin-bottom: 20px;
+  }
   .footer-under {
+    padding: 20px 0;
+    margin: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .footer-under p {
-    font-size: 40px;
-    padding: 20px;
+    font-size: 20px;
+    text-align: center;
   }
   .footer-under-social .inst,
   .footer-under-social .vk,
@@ -1321,7 +1312,7 @@ header .content-scroll-item-right {
     width: 70px;
     height: 70px;
     background-size: 70px;
-    margin: 30px;
+    margin: 30px 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

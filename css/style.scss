@@ -187,41 +187,24 @@ header {
 
             }
         }
-        &-scroll {
+        &-bullet {
             position: absolute;
-            height: 5px;
-            width: 5px;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
+            display: flex;
+            justify-content: center;
             bottom: 110px;
             &-item {
                 position: relative;
-                width: 100%;
-                height: 100%;
-                border: 2px solid white;
-                background-color: white;
+                margin: 0 15px;
+                border: 1px solid white;
                 border-radius: 50px;
-                &-left { 
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border: 2px solid white;
-                    background-color: white;
-                    border-radius: 50px;
-                    right: 40px;
-                }
-                &-right { 
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    border: 2px solid white;
-                    background-color: white;
-                    border-radius: 50px;
-                    left: 40px;
-                    top: 0;
+                width: 9px;
+                height: 9px;
+                cursor: pointer;
+                &.active {
+                    background-color: $main_color;
                 }
             }
+
         }
     }
 }
@@ -687,8 +670,11 @@ header {
 }
 
 @media (max-width: 800px) {
-    h2{
-        font-size: 80px;
+    .wrapper {
+        overflow: hidden;
+    }
+    h2 {
+        font-size: 40px;
     }
     header {
         .slider {
@@ -696,39 +682,39 @@ header {
                 &-left {
                     position: absolute;
                     border: 5px solid #709dca;
-                    height: 100px;
-                    width: 100px;
+                    height: 60px;
+                    width: 60px;
                     border-radius: 100px;
-                    bottom: 95px;
-                    left: 0;
+                    bottom: 40px;
+                    left: -90px;
                     &-button {
                         position: relative;
                         border-left: 5px solid #e4a723;
                         border-bottom: 5px solid #e4a723;
                         transform: rotate(45deg);
-                        height: 30px;
-                        width: 30px;
-                        left: 35px;
-                        bottom: -30px;
+                        height: 25px;
+                        width: 25px;
+                        left: 20px;
+                        bottom: -16px;
                     }
                 }
                 &-right {
                     position: absolute;
                     border: 5px solid #709dca;
-                    height: 100px;
-                    width: 100px;
+                    height: 60px;
+                    width: 60px;
                     border-radius: 100px;
-                    bottom: 95px;
-                    right: 0;
+                    bottom: 40px;
+                    right: -90px;
                     &-button {
                         position: relative;
                         border-left: 5px solid #e4a723;
                         border-top: 5px solid #e4a723;
                         transform: rotate(135deg);
-                        height: 30px;
-                        width: 30px;
-                        left: 28px;
-                        top: 31px;
+                        height: 25px;
+                        width: 25px;
+                        left: 11px;
+                        top: 15px;
                     }
                 }
             }
@@ -736,16 +722,7 @@ header {
         .nav {
             padding: 0;
             &-logo {
-                padding-top: 25px;
-                p {
-                    font-size: 60px;
-                }
-                &:before {
-                    background-size: 100px;
-                    height: 100px;
-                    width: 100px;
-                    margin-left: 25px;
-                }
+                display: none;
             }
             &-text {
                 position: fixed;
@@ -759,19 +736,19 @@ header {
                 transform: translateX(100%); 
                 z-index: 999999;
                 .navigation {
-                    margin: 95px 0;
-                    padding: 45px;
+                    margin: 10px 0;
                     color: white;
-                    font-size: 90px;
+                    font-size: 45px;
                 }
             }
             .burger {
+                margin-top: 80px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 position: fixed;
-                width: 100px;
-                height: 55px;
+                width: 60px;
+                height: 50px;
                 right: 20px;
                 cursor: pointer;
                 z-index: 999999;
@@ -803,31 +780,30 @@ header {
         }
         .content {
             h1 {
-                font-size: 100px;
-                padding-top: 75px;
+                font-size: 35px;
+                text-align: center;
+                margin-bottom: 20px;
             }
             p {
-                font-size: 45px;
+                font-size: 30px;
+                text-align: center;
             }
             &-button {
-                width: 300px;
                 font-size: 40px;
             }
             .button {
-                height: 80px;
-                width: 400px;
+                height: 60px;
+                width: 80%;
+                margin-top: 35px;
             }
-            &-scroll {
+            &-bullet {
                 display: none;
             }
         }
     }
     header.open .nav .nav-text { 
         transform: translateX(0);
-    }
-    header.open .nav .nav-logo {
-        transition: 0.5s all;
-        opacity: 0;
+        padding: 65px 0;
     }
     header.open .nav .burger:before{
         transform: rotate(45deg);
@@ -843,36 +819,40 @@ header {
     .offer {
         &-name {
             font-size: 50px;
+            padding: 50px 0 0;
+            p {
+                font-size: 29px;
+                margin-top: 10px;
+                padding: 0 10px;
+            }
         }
         &-block {
-            padding: 20px 50px;
             flex-direction: column;
             display: flex;
             height: 100%;
             text-align: center;
+            padding: 0 15px;
             &-item{
                 width: 100%;
-                padding: 15px;
+                padding: 0;
                 height: 100%;
+                padding: 0;
                 h3 {
-                    font-size: 70px;
-                    padding-bottom: 20px;
-                    padding-left: 0;
+                    margin: 0;
+                    font-size: 27px;
+                    padding: 55px 0 0;
                     &.map,
                     &.compass,
                     &.discussion,
                     &.souvenir,
                     &.picture,
                     &.sun {
-                        height: 100px;
-                        background-size: 100px;
+                        background: none;
                     }
                 }
                 p {
-                    font-size: 40px;
-                    padding-top: 40px;
-                    padding-left: 0;
-                    padding-bottom: 40px;
+                    padding: 0;
+                    font-size: 30px;
                 }
             }
         }
@@ -890,14 +870,13 @@ header {
                 margin: 45px 0;
             }
             p {
-                font-size: 40px;
-                padding: 0 40px 60px 40px;
-                margin: 0;
+                font-size: 30px;
+                padding: 0 10px 20px 10px;
             }
             &-button {
-                font-size: 50px;
+                font-size: 35px;
                 width: 100%;
-                height: 110px;
+                height: 95px;
                 margin: 0;
                 padding: 0;
             }
@@ -909,8 +888,6 @@ header {
                 margin: 0;
                 padding: 0;
                 &-content {
-                    width: 80%;
-                    height: 60%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -919,9 +896,8 @@ header {
                         margin: 0;
                         padding: 0;
                         input {
-                            width: 100%;
-                            height: 120px;
-                            font-size: 40px;
+                            font-size: 20px;
+                            margin-bottom: 0;
                             &.error {
                                 border-color: #5e20c7;
                                 color: #5e20c7;
@@ -929,14 +905,12 @@ header {
                             }
                         }
                         textarea {
-                            width: 100%;
-                            height: 140px;
-                            font-size: 40px;
+                            font-size: 20px;
+                            margin-bottom: 0;
                         }
                         button {
-                            width: 100%;
-                            height: 120px;
-                            font-size: 60px;
+                            font-size: 35px;
+                            margin-bottom: 0;
                             &.fail {
                                 background-color: grey;
                                 cursor: none;
@@ -946,7 +920,7 @@ header {
                             color: #5e20c7;
                             display: none;
                             font-style: italic;
-                            font-size: 50px;
+                            font-size: 20px;
                         }
                     }
                 }
@@ -961,13 +935,13 @@ header {
                 }
             }
             p {
-                font-size: 40px;
+                font-size: 30px;
+                padding: 0 10px;
             }
         }
         &-block {
             &-item {
-                width: calc(100%/2);
-                height: 445px;
+                width: 100%;
             }
         }
     }
@@ -979,24 +953,29 @@ header {
             margin: 0;
             padding: 0;
             &-item {
-                padding: 15px;
-                font-size: 40px;
+                padding: 10px;
+                font-size: 30px;
+                text-align: center;
+                margin: 0;
                 &-first {
                     &-name {
+                        font-size: 25px;
+                        margin-top: 0;
+                        font-style: italic;
+                        margin-bottom: 30px;
                         &:before {
-                            background-size: 100px;
-                            width: 100px;
-                            height: 100px;
+                            background: none;
                         }
                     }
                 }
                 &-second {
                     &-name {
+                        font-size: 25px;
+                        margin-top: 0;
+                        font-style: italic;
+                        margin-bottom: 30px;
                         &:before {
-                            background-size: 100px;
-                            width: 100px;
-                            height: 100px;
-                            margin-bottom: 45px;
+                            background: none;
                         }
                     }
                 }
@@ -1008,8 +987,7 @@ header {
         padding: 0;
         width: 100%;
         h4 {
-            font-size: 65px;
-            margin-top: 90px;
+            font-size: 45px;
             color: $main_color;
             font-weight: bold;
             text-transform: uppercase;
@@ -1024,9 +1002,12 @@ header {
             display: flex;
             flex-direction: column;
             margin: 0;
-            padding: 65px 165px;
+            padding: 0 10px;
             text-align: center;
             box-sizing: border-box;
+            p {
+                font-size: 30px;
+            }
             &-info {
                 margin: 0;
                 padding: 0;
@@ -1045,24 +1026,22 @@ header {
                 width: 100%;
                 &-info {
                     p {
-                        font-size: 60px;
+                        font-size: 30px;
+                        padding-bottom: 10px;
                         &:before {
-                            background-size: 50px;
-                            width: 50px;
-                            height: 50px;
+                            display: none;
                         }
                     }
                 }
                 a { 
-                    font-size: 60px;
-                    line-height: normal;
-                    margin-bottom: 20px;
+                    font-size: 30px;
+                    line-height: 50px;
+                    padding-bottom: 10px;
                     &.email,
                     &.phone {
+                        padding-bottom: 10px;
                         &:before {
-                            background-size: 50px;
-                            width: 50px;
-                            height: 50px;
+                            display: none;
                         }
                     }
                 }
@@ -1074,15 +1053,20 @@ header {
                 &-block {
                     &-second {
                         padding-top: 40px;
+                        p {
+                            margin-bottom: 20px;
+                        }
                     }
                 }
             }
         }
         &-under {
+            padding: 20px 0;
+            margin: 0;
             flex-direction: column;
             p{
-                font-size: 40px;
-                padding: 20px;
+                font-size: 20px;
+                text-align: center;
             }
             &-social {
                 .inst,
@@ -1091,7 +1075,7 @@ header {
                     width: 70px;
                     height: 70px;
                     background-size: 70px;
-                    margin: 30px;
+                    margin: 30px 10px;
                 }
             }
         }
